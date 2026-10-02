@@ -1,11 +1,9 @@
-import re
-
-with open('input.txt') as f:
+with open('C:\semestr1\seminar2\input.txt') as f:
 	t = f.read()
 t = t.replace('\n', ' ')
-print(t)
-p = r'[!?.][ ]'
+t += ' '
 k = 0
-for el in re.finditer(p, t):
-	k += 1
+for i in range(1, len(t)):
+	if t[i] == ' ' and t[i - 1] in ['.', '?', '!']:
+		k += 1
 print(k)
